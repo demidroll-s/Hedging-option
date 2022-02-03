@@ -4,5 +4,5 @@
  
 class Priceable {
 public:
-    virtual double price(const BlackScholesModel& model) const = 0;
+    virtual double price(const Black_Scholes_model& model) const = 0;
 };
