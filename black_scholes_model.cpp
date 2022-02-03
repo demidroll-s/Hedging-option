@@ -62,6 +62,6 @@ void test_risk_neutral_price_path() {
     ASSERT_APPROX_EQUAL(mean(final_prices), exp(bsm.risk_free_rate * 2.0) * bsm.stock_price, 0.5);
 }
 
-void test_Black_Scholes_model() {
+void test_bsm() {
     TEST(test_risk_neutral_price_path);
 }
