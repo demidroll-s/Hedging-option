@@ -1,4 +1,4 @@
-#include "BlackScholesModel.h"
+#include "black_scholes_model.h"
  
 using namespace std;
  
