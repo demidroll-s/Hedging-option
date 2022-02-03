@@ -7,10 +7,10 @@ import glob
 import csv
 import os
 
-plt.rc('text', usetex=True)
+plt.rc('text', usetex = True)
 plt.rcParams['text.latex.preamble'] = [r'\usepackage[utf8]{inputenc}',
-            r'\usepackage[english, russian]{babel}',
-            r'\usepackage{amsmath}',
+            r'\usepackage[russian]{babel}',
+            r'\usepackage{amsmath}', 
             r'\usepackage{siunitx}']
 
 def plot_maker(df, i, n_scenario, y_min, y_max):
@@ -84,5 +84,3 @@ fps = 6
 file_list = sorted(glob.glob('Results/BSM/pngs/*.png'))
 clip = mpy.ImageSequenceClip(file_list, fps=fps)
 clip.write_gif('{}.gif'.format(gif_name), fps=fps)
-
-

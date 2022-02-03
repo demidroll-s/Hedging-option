@@ -1,4 +1,4 @@
 1
 2 make
-7 python3 delta.py
-7 python3 table_creator.py
+7 python3 Python/delta.py
+7 python3 Python/table_creator.py

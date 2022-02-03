@@ -3,8 +3,10 @@ import matplotlib.pyplot as plt
 import math
 
 plt.rc('text', usetex = True)
-plt.rc('text.latex',unicode = True)
-plt.rcParams['text.latex.preamble'] = [r'\usepackage[utf8]{inputenc}', r'\usepackage[russian]{babel}', r'\usepackage{amsmath}']
+plt.rcParams['text.latex.preamble'] = [r'\usepackage[utf8]{inputenc}',
+            r'\usepackage[russian]{babel}',
+            r'\usepackage{amsmath}', 
+            r'\usepackage{siunitx}']
             
 data = []
 with open("bsm-output.txt") as f:

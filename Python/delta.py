@@ -6,10 +6,10 @@ from scipy.stats import norm
 import matplotlib.mlab as mlab
 import csv
 
-plt.rc('text', usetex=True)
+plt.rc('text', usetex = True)
 plt.rcParams['text.latex.preamble'] = [r'\usepackage[utf8]{inputenc}',
-            r'\usepackage[english, russian]{babel}',
-            r'\usepackage{amsmath}',
+            r'\usepackage[russian]{babel}',
+            r'\usepackage{amsmath}', 
             r'\usepackage{siunitx}']
 
 #1. Read data from delta-output.txt

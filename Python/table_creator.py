@@ -12,7 +12,7 @@ s[6] = 'MATURITY'
 with open('bsm-table.txt', 'r') as in_file:
     stripped = (line.strip() for line in in_file)
     lines = (line.split(" ") for line in stripped if line)
-    with open('Results/Auxiliary/bsm-table.csv', 'w') as out_file:
+    with open('Results/bsm-table.csv', 'w') as out_file:
         writer = csv.writer(out_file)
         writer.writerow(s)
         writer.writerows(lines)
@@ -27,7 +27,7 @@ s[4] = 'DATE'
 with open('delta-table-simulation.txt', 'r') as in_file:
     stripped = (line.strip() for line in in_file)
     lines = (line.split(" ") for line in stripped if line)
-    with open('Results/Auxiliary/delta-table-simulation.csv', 'w') as out_file:
+    with open('Results/delta-table-simulation.csv', 'w') as out_file:
         writer = csv.writer(out_file)
         writer.writerow(s)
         writer.writerows(lines)
@@ -35,7 +35,7 @@ with open('delta-table-simulation.txt', 'r') as in_file:
 with open('delta-table-pricing.txt', 'r') as in_file:
     stripped = (line.strip() for line in in_file)
     lines = (line.split(" ") for line in stripped if line)
-    with open('Results/Auxiliary/delta-table-pricing.csv', 'w') as out_file:
+    with open('Results/delta-table-pricing.csv', 'w') as out_file:
         writer = csv.writer(out_file)
         writer.writerow(s)
         writer.writerows(lines)
@@ -47,7 +47,7 @@ s[1] = 'NUMBER OF SCENARIOS'
 with open('delta-table-option.txt', 'r') as in_file:
     stripped = (line.strip() for line in in_file)
     lines = (line.split(" ") for line in stripped if line)
-    with open('Results/Auxiliary/delta-table-option.csv', 'w') as out_file:
+    with open('Results/delta-table-option.csv', 'w') as out_file:
         writer = csv.writer(out_file)
         writer.writerow(s)
         writer.writerows(lines)

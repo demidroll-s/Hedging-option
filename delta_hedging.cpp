@@ -1,4 +1,5 @@
 #include "delta_hedging.h"
+#include "black_scholes_model.h"
 #include "testing.h"
 #include "matlib.h"
  
