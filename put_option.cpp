@@ -10,7 +10,7 @@ double Put_option::payoff(const std::vector<double>& stock_prices) const
     else
         return 0.0;
 }
- 
+
 double Put_option::price(const Black_Scholes_model& bsm) const
 {
     double S = bsm.stock_price;
