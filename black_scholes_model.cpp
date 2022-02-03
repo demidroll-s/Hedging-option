@@ -4,7 +4,7 @@ using namespace std;
  
 #include "matlib.h"
  
-BlackScholesModel::BlackScholesModel() :
+Black_Scholes_model::Black_Scholes_model() :
     drift(0.0),
     stockPrice(0.0),
     volatility(0.0),
@@ -12,44 +12,26 @@ BlackScholesModel::BlackScholesModel() :
     date(0.0) {
 }
  
-/**
- *  Creates a price path according to the model parameters
- */
-vector<double> BlackScholesModel::
-            generateRiskNeutralPricePath(
-        double toDate,
-        int nSteps ) const {
-    return generatePricePath( toDate, nSteps, riskFreeRate );
+vector<double> Black_Scholes_model::generate_risk_neutral_price_path(double to_date, int n_steps) const {
+    return generate_price_path(to_date, n_steps, risk_free_rate);
 }
  
-/**
- *  Creates a price path according to the model parameters
- */
-vector<double> BlackScholesModel::generatePricePath(
-        double toDate,
-        int nSteps ) const {
-    return generatePricePath( toDate, nSteps, drift );
+vector<double> Black_Scholes_model::generate_price_path(double to_date, int n_steps) const {
+    return generate_price_path(to_date, n_steps, drift);
 }
  
- 
-/**
- *  Creates a price path according to the model parameters
- */
-vector<double> BlackScholesModel::generatePricePath(
-        double toDate,
-        int nSteps,
-        double drift ) const {
-    vector<double> path(nSteps,0.0);
-    vector<double> epsilon = randn( nSteps );
-    double dt = (toDate-date)/nSteps;
-    double a = (drift - volatility*volatility*0.5)*dt;
-    double b = volatility*sqrt(dt);
-    double currentLogS = log( stockPrice );
-    for (int i=0; i<nSteps; i++) {
-        double dLogS = a + b*epsilon[i];
-        double logS = currentLogS + dLogS;
-        path[i] = exp( logS );
-        currentLogS = logS;
+vector<double> Black_Scholes_model::generate_price_path(double to_date, int n_steps, double drift) const {
+    vector<double> path(n_steps, 0.0);
+    vector<double> epsilon = randn(n_steps);
+    double dt = (to_date - date) / n_steps;
+    double a = (drift - volatility * volatility * 0.5) * dt;
+    double b = volatility * sqrt(dt);
+    double current_log_S = log(stock_price);
+    for (int i = 0; i < n_steps; i++) {
+        double d_log_S = a + b * epsilon[i];
+        double log_S = current_log_S + d_log_S;
+        path[i] = exp(log_S);
+        current_Log_S = log_S;
     }
     return path;
 }
