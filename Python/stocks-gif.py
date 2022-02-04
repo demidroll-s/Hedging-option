@@ -29,7 +29,7 @@ def plot_maker(df, i, n_scenario, y_min, y_max):
     kwargs={'linestyle':'--', 'lw':0.5}
     plt.grid(True, **kwargs)
     k = 100 + i
-    path = "Results/BSM/pngs/" + str(k) + ".png"
+    path = "Results/pngs/" + str(k) + ".png"
     plt.savefig(path)
 
 #Секция 2. Преобразование .txt в .csv
@@ -50,13 +50,13 @@ for i in range(n_scenarios):
 with open('bsm-output.txt', 'r') as in_file:
     stripped = (line.strip() for line in in_file)
     lines = (line.split(" ") for line in stripped if line)
-    with open('Results/BSM/bsm-data.csv', 'w') as out_file:
+    with open('Results/bsm-data.csv', 'w') as out_file:
         writer = csv.writer(out_file)
         writer.writerow(s)
         writer.writerows(lines)
 
 # Секция 3. Преобразование данных в датафреймы
-df = pd.read_csv('Results/BSM/bsm-data.csv')
+df = pd.read_csv('Results/bsm-data.csv')
 df.set_index('TIME', inplace=True)
 data = df.values.tolist()
 
@@ -79,8 +79,8 @@ for i in range(0, l + 1):
     plot_maker(df, i, n_scenarios, y_min, y_max)
 
 # Секция 6. Генерация GIF
-gif_name = 'Results/BSM/Dynamics'
+gif_name = 'Results/Dynamics'
 fps = 6
-file_list = sorted(glob.glob('Results/BSM/pngs/*.png'))
+file_list = sorted(glob.glob('Results/pngs/*.png'))
 clip = mpy.ImageSequenceClip(file_list, fps=fps)
 clip.write_gif('{}.gif'.format(gif_name), fps=fps)
