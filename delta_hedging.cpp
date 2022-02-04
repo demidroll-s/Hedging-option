@@ -1,5 +1,4 @@
 #include "delta_hedging.h"
-#include "black_scholes_model.h"
 #include "testing.h"
 #include "matlib.h"
  
@@ -108,10 +107,10 @@ void test_hedging()
         while (f_input >> a[i])
             i++;
         f_input.close();
-        risk_free_rate = a[0]/100;
+        risk_free_rate = a[0] / 100;
 		stock_price = a[1];
 		drift = a[2];
-		volatility = a[3]/100;
+		volatility = a[3] / 100;
         date = a[4];
 		maturity = a[5];
 		n_scenarios = a[6];
